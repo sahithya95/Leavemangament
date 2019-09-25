@@ -1,0 +1,46 @@
+<div class="container">
+  <app-navbar title="Table List"></app-navbar>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="material-icons">assignment</i>
+        </div>
+       
+        <div class="card-content">
+          <div>
+          <h4 class="card-title">Add Holidays</h4>
+          <div class="adduser">
+              <button  mat-raised-button (click)="openDialog()">Add Holidays</button>
+            </div>
+          
+          <div class="table-responsive">
+            <table class="table">
+              <thead class="text-primary">
+                <tr>
+                  <th>Date</th>
+                  <th>Occasion</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr  *ngFor="let holiday of holidays;let i=index">
+                  <td>{{holiday.date |  date: 'dd/MM/yyyy'}}</td>
+                  <td>{{holiday.Occasion}}</td>
+                 
+                  <td>
+                    <!-- <button  mat-raised-button (click)="edit(user,user.id,i)">edit</button> -->
+                  <button  mat-raised-button (click)="edit(holiday,holiday._id)"><mat-icon>create</mat-icon></button>
+                  <button  mat-raised-button (click)="delete(holiday,holiday._id)"><mat-icon>delete</mat-icon></button>
+                </td>
+                </tr>
+           
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+</div>

@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Apply leave</h1>
+<mat-form-field>
+    <mat-select placeholder="leaveType" [(ngModel)]="data.leave_type">
+      <mat-option *ngFor="let food of leavetype" [value]="food.leaveType" >
+        {{food.leaveType}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+<br>
+<mat-form-field>
+    <input matInput type="date" placeholder="Start date" [(ngModel)]="data.Start_Date">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <input matInput type="date" placeholder="End Date" [(ngModel)]="data.End_Date" >
+</mat-form-field>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>

@@ -1,0 +1,58 @@
+<div class="container">
+  <app-navbar title="Table List"></app-navbar>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="material-icons">assignment</i>
+        </div>
+       
+        <div class="card-content">
+          <div>
+            <div class="adduser">
+              <button  mat-raised-button (click)="openDialog()">Apply Leave</button>
+            </div>
+          
+          <div class="table-responsive">
+            <table class="table">
+              <thead class="text-primary">
+                <tr>
+                  <!-- <th>UID</th> -->
+                  <th>Leave_type</th>
+                  <th>Start Date</th>
+                  <th>End Date</th>
+                  <th>No of days</th>
+                  <th>Applied Date</th>
+                  <th scope="col">Status</th>
+               
+                </tr>
+              </thead>
+              <tbody>
+                <tr  *ngFor="let request of requests;let i=index">
+                  <!-- <td>{{request.UID}}</td> -->
+                  <td>{{request.leave_type}}</td>
+                  <td>{{request.Start_Date |  date: 'dd/MM/yyyy'}}</td>
+                  <td>{{request.End_Date |  date: 'dd/MM/yyyy'}}</td>
+                  <td>{{request.No_of_days}}</td>
+                  <td>{{request.Applied_Date |  date: 'dd/MM/yyyy'}}</td>
+                  <td *ngIf="request.status=='approved'" >
+                      <mat-chip class="approved">{{request.status}}</mat-chip>
+                  </td>
+                  <td *ngIf="request.status=='rejected'">
+                      <mat-chip  class="rejected">{{request.status}}</mat-chip>
+                  </td>
+                  <td *ngIf="request.status=='pending'" >
+                      <mat-chip class="pending">{{request.status}}</mat-chip>
+                  </td>
+               
+                </tr>
+           
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+</div>

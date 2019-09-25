@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Add Holidays</h1>
+<mat-form-field>
+    <input matInput placeholder="Date" type="date" [(ngModel)]="data.date">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <input matInput type="text" placeholder="Occasion" [(ngModel)]="data.Occasion">
+</mat-form-field>
+<br>
+
+
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>

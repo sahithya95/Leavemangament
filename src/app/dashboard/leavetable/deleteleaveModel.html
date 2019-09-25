@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Add new user</h1>
+<mat-form-field>
+    <input matInput placeholder="LeaveType" [(ngModel)]="data.leaveType">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <input matInput type="text" placeholder="no_of_Day" [(ngModel)]="data.no_of_Day">
+</mat-form-field>
+<br>
+
+
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>

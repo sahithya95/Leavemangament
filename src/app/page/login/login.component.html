@@ -1,0 +1,59 @@
+<div class="background"></div>
+<div class="container">
+  <div class="container">
+    <div class="row">
+      <app-header></app-header>
+    </div>
+   <div class="row">
+     <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+       <div class="card">
+         <div class="card-header">
+            <h4>Login</h4>
+           <!-- <div class="social-btns">
+             <button mat-icon-button><i class="fa fa-facebook-square"></i></button>
+             <button mat-icon-button><i class="fa fa-twitter"></i></button>
+             <button mat-icon-button><i class="fa fa-google-plus"></i></button>
+           </div> -->
+         </div>
+         <!-- <p class="tip">Or Be Classical</p> -->
+
+         <form [formGroup]="loginForm" (ngSubmit)="handleSubmit()">
+         <div class="card-form">
+        
+         
+           <div class="form-row">
+             <i class="material-icons">email</i>
+             <mat-form-field color="accent">
+               <input type="text" matInput placeholder="Email address" formControlName="email"/>
+               <mat-error *ngIf="email.invalid && email.touched">Email is invalid             
+                </mat-error>
+            
+             </mat-form-field>
+          
+           </div>
+       
+           <div class="form-row">
+             <i class="material-icons">lock_outline</i>
+             <mat-form-field color="accent">
+               <input type="password" matInput placeholder="Password" formControlName="password"/>
+               <mat-error *ngIf="password.touched">please enter password           
+                </mat-error>
+               
+             </mat-form-field>
+          
+           
+           </div>
+           <mat-error *ngIf="verified" class="text-center">please enter valid credentials           
+            </mat-error>
+          
+         </div>
+         <div class="card-footer">
+           <button mat-button [disabled]="!loginForm.valid">LET'S GO</button>
+           <a [routerLink]="['../../forgot-password']">Forgot Password</a>
+         </div>
+        </form>
+       </div>
+     </div>
+   </div>
+  </div>
+</div>
